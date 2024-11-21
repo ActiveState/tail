@@ -216,7 +216,7 @@ func (shared *InotifyTracker) sendEvent(event fsnotify.Event) {
 func (shared *InotifyTracker) run() {
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
-		util.Fatal("failed to create Watcher")
+		util.Fatal("failed to create Watcher: %v", err)
 	}
 	shared.watcher = watcher
 
